@@ -61,16 +61,14 @@ Query: camera_view.png from robot camera
 ### Best Pose Hypothesis
 - x=3.64, y=2.43, yaw=-0.19
 
-## Semantic Graph Structure
+## Success Analysis
+- Vector KNN search successfully found visually similar frames
+- Graph traversal correctly identified reachable places
+- Pose hypothesis generated from best matching place
 
-The semantic graph connects robot runs, keyframes, poses, observations, objects, and places.
-
-The main graph relationships are:
-
-```text
-Run → Keyframe
-Keyframe → Pose
-Keyframe → Observation
-Observation → Object
-Object → Place
-Place → Place
+## Reproducibility
+1. docker compose up demo-world
+2. python3 semantic_mapper.py  (Run A - mapping)
+3. Navigate robot around maze using RViz2 2D Nav Goal
+4. python3 build_graph.py
+5. python3 relocalizer.py  (Run B - re-localization)
