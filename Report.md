@@ -47,6 +47,20 @@ The following tables were used to store the semantic mapping data:
 | `place_adjacency` | Stores edges between nearby/reachable places |
 | `objects` | Stores fused object landmarks from repeated observations |
 
+## Re-Localization (Run B)
+Query: camera_view.png from robot camera
+
+### Vector Query Results
+- det_pk=3: bed, conf=0.27, distance=0.0888
+- det_pk=4: traffic light, conf=0.34, distance=0.1253
+
+### Top-3 Candidate Places
+1. Place 30: (4.0, 2.0) — score=1.7859
+   - Reachable within 2 hops: 14 places
+
+### Best Pose Hypothesis
+- x=3.64, y=2.43, yaw=-0.19
+
 ## Semantic Graph Structure
 
 The semantic graph connects robot runs, keyframes, poses, observations, objects, and places.
